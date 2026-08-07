@@ -1,0 +1,17 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-mirrorlist
+pkgver=20260806
+pkgrel=1
+pkgdesc="pytunaOS repository mirrorlist"
+url='https://github.com/pytunaOS/packages'
+arch=('any')
+license=(GPL-3.0-or-later)
+groups=(pytuna)
+source=("$pkgname")
+backup=("etc/pacman.d/$pkgname")
+sha512sums=('d123bc09bf05f13b36d9f769cfc43041e0a5a00bca1531f736f6279ffd5e2458261d6b5e572a293ce8d6de50c66037a6a0a1f0e3fc9de9dff42f036503b9f14b')
+
+package() {
+    install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"
+}
