@@ -1,0 +1,40 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-niri-noctalia
+pkgdesc='pytunaOS Niri + Noctalia settings'
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/pytunaOS/$pkgname"
+license=(GPL-3.0-only)
+makedepends=('coreutils' 'git')
+source=(git+$url#tag=v${pkgver})
+sha512sums=('SKIP')
+depends=(
+  adw-gtk-theme
+  capitaine-cursors
+  gnome-keyring
+  niri
+  noctalia
+  noto-fonts
+  noto-fonts-emoji
+  wl-clipboard
+  xdg-desktop-portal-gnome
+  xdg-desktop-portal-gtk
+  xdg-user-dirs
+  xwayland-satellite
+)
+optdepends=(
+  'alacritty: default terminal used in keybinds.kdl'
+  'fastfetch: system info fetch, config included'
+  'qt5ct: Qt5 theming to match GTK/Noctalia colors'
+  'qt6ct: Qt6 theming to match GTK/Noctalia colors'
+)
+provides=('pytuna-desktop-settings')
+conflicts=('pytuna-desktop-settings')
+install="$pkgname.install"
+
+package() {
+  install -d "${pkgdir}/etc"
+  cp -rf "${srcdir}/${pkgname}/etc" "${pkgdir}"
+}
