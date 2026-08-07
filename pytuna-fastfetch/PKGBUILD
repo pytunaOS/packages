@@ -35,12 +35,12 @@ optdepends=('chafa: Image output as ascii art'
             'zlib: Faster image output when using kitty graphics protocol')
 replaces=('fastfetch')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
-        'fastfetch-pytunaos.patch')
+        '${pkgname}.patch')
 sha256sums=('547883c2f0dbc85a4545d4533f5b812fbc4c8ffe1271056de18b51994acbf474'
             'a9da513e625951833f6dad3de21fd3e7a760b4c85a2f0fc2374ba09eb4b22373')
 
 prepare() {
-	patch -d "${_pkgname}-${pkgver}" -Np1 -i "${srcdir}/fastfetch-pytunaos.patch"
+	patch -d "${_pkgname}-${pkgver}" -Np1 -i "${srcdir}/${pkgname}.patch"
 }
 
 build() {
