@@ -32,9 +32,8 @@ optdepends=(
 )
 provides=('pytuna-desktop-settings')
 conflicts=('pytuna-desktop-settings')
-install="$pkgname.install"
 
 package() {
-  install -d "${pkgdir}/etc"
-  cp -rf "${srcdir}/${pkgname}/etc" "${pkgdir}"
+  install -d "${pkgdir}/etc/skel"
+  cp -rf "${srcdir}/${pkgname}/etc/skel/." "${pkgdir}/etc/skel/"
 }
