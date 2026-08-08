@@ -5,7 +5,7 @@ pkgdesc='pytunaOS Niri + Noctalia settings'
 pkgver=1.0.0
 pkgrel=1
 arch=('any')
-url="https://github.com/pytunaOS/$pkgname"
+url="https://github.com/pytunaOS/pytuna-niri-noctalia"
 license=(GPL-3.0-only)
 makedepends=('coreutils' 'git')
 source=(git+$url#tag=v${pkgver})
