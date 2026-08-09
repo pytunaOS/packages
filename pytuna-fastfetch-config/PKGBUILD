@@ -8,15 +8,6 @@ arch=('any')
 url="https://github.com/pytunaOS"
 license=(GPL-3.0-only)
 depends=('fastfetch')
-source=(
-    'config.jsonc'
-    'pytuna_logo.txt'
-)
-
-sha256sums=(
-    'SKIP'
-    'SKIP'
-)
 
 package() {
   install -d "${pkgdir}/etc/skel"
