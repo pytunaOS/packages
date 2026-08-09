@@ -35,5 +35,6 @@ conflicts=('pytuna-desktop-settings')
 
 package() {
   install -d "${pkgdir}/etc/skel"
-  cp -r "${srcdir}/${pkgname}/etc/skel/*" "${pkgdir}/etc/skel"
+  cp -rv "${srcdir}/${pkgname}/etc/skel/.config" "${pkgdir}/etc/skel"
+  cp -rv "${srcdir}/${pkgname}/etc/skel/Imagens" "${pkgdir}/etc/skel"
 }
