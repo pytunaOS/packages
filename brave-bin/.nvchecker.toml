@@ -1,4 +1,0 @@
-[brave-bin]
-source = "regex"
-url = "https://brave-browser-apt-release.s3.brave.com/dists/stable/main/binary-amd64/Packages"
-regex = 'Version: (\S+)'
