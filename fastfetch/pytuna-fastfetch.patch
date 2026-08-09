@@ -11,14 +11,14 @@ diff --git a/src/logo/ascii/p.inc b/src/logo/ascii/p.inc
 +        .names = { "pytuna", "pytunaOS" },
 +        .lines = FASTFETCH_DATATEXT_LOGO_PYTUNAOS,
 +        .colors = {
-+            FF_COLOR_FG_RGB "122;14;14",
-+            FF_COLOR_FG_RGB "164;20;20",
-+            FF_COLOR_FG_RGB "199;27;20",
-+            FF_COLOR_FG_RGB "217;36;24",
-+            FF_COLOR_FG_RGB "229;58;40",
++            FF_COLOR_FG_RGB "159;24;6",
++            FF_COLOR_FG_RGB "175;27;7",
++            FF_COLOR_FG_RGB "190;29;7",
++            FF_COLOR_FG_RGB "190;29;7",
++            FF_COLOR_FG_RGB "205;33;8",
 +        },
-+        .colorKeys = FF_COLOR_FG_RGB "164;20;20",
-+        .colorTitle = FF_COLOR_FG_RGB "199;27;20",
++        .colorKeys = FF_COLOR_FG_RGB "190;29;7",
++        .colorTitle = FF_COLOR_FG_RGB "190;29;7",
 +    },
 +    #endif
      // LAST
@@ -47,4 +47,4 @@ new file mode 100644
 +$2⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡵⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⢤⢤⣲⡲⡽⡁⠀⠀⠀⠀⠀⢀⡮⠳⣅⠀⠀⠀⠀⠀⠀⠀ 
 +$2⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣊⠋⠗⣖⣖⡄⠀⠀⢰⠯⠉⠀⠀⠀⠹⣕⠄⠀⠀⠀⠰⡫⠀⠀⢫⢆⠀⠀⠀⠀⠀  
 +$1⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⠀⠀⡧⡇⣗⠄⠀⢸⢭⠀⠀⠀⠀⠀⣨⠟⠀⠀⢀⣮⠋⠀⡠⡯⠃⠀⠀⠀⠀⠀  
-+$1⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⠣⠖⠽⠂⢸⢥⣢⢴⡫⠀⠀⠀⠀⠸⣪⢵⡰⡲⠝⠖⠖⠖⠽⠁⠀⠀⠀⠀⠀⠀⠀ 
++$1⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⠣⠖⠽⠂⢸⢥⣢⢴⡫⠀⠀⠀⠀⠸⣪⢵⡰⡲⠝⠖⠖⠖⠽⠁⠀⠀⠀⠀⠀⠀⠀
