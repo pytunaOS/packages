@@ -7,8 +7,21 @@ pkgrel=1
 arch=('any')
 url="https://github.com/pytunaOS"
 license=(GPL-3.0-only)
+depends=('fastfetch')
+source=(
+    'config.jsonc'
+    'pytuna_logo.txt'
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+)
 
 package() {
-  install -d "${pkgdir}/etc/skel"
-  cp -rv "${srcdir}/${pkgname}/etc/skel/.config" "${pkgdir}/etc/skel"
+    install -Dm644 "${srcdir}/${pkgname}/.config/fastfetch/config.jsonc" \
+        "${pkgdir}/etc/skel/.config/fastfetch/config.jsonc"
+
+    install -Dm644 "${srcdir}/${pkgname}/.config/fastfetch/ascii/pytuna_logo.txt" \
+        "${pkgdir}/etc/skel/.config/fastfetch/ascii/pytuna_logo.txt"
 }
