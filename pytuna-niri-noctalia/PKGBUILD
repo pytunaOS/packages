@@ -2,10 +2,10 @@
 
 pkgname=pytuna-niri-noctalia
 pkgdesc='pytunaOS Niri + Noctalia settings'
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 arch=('any')
-url="https://github.com/pytunaOS/pytuna-niri-noctalia"
+url="https://github.com/pytunaOS/$pkgname"
 license=(GPL-3.0-only)
 makedepends=('coreutils' 'git')
 source=(git+$url)
@@ -35,5 +35,5 @@ conflicts=('pytuna-desktop-settings')
 
 package() {
   install -d "${pkgdir}/etc/skel"
-  cp -rf "${srcdir}/${pkgname}/etc/skel/." "${pkgdir}/etc/skel/"
+  cp -r "${srcdir}/${pkgname}/etc/skel/*" "${pkgdir}/etc/skel"
 }
