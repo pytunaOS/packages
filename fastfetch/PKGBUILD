@@ -1,7 +1,6 @@
 # Maintainer: Wendel Peterson <pytunaOS@proton.me>
 
-_pkgname=fastfetch
-pkgname=pytuna-fastfetch
+pkgname=fastfetch
 pkgver=2.66.0
 pkgrel=1
 pkgdesc="A feature-rich and performance oriented neofetch like system information tool"
@@ -41,11 +40,11 @@ sha256sums=('547883c2f0dbc85a4545d4533f5b812fbc4c8ffe1271056de18b51994acbf474'
             'a9da513e625951833f6dad3de21fd3e7a760b4c85a2f0fc2374ba09eb4b22373')
 
 prepare() {
-	patch -d "${_pkgname}-${pkgver}" -Np1 -i "${srcdir}/pytuna-fastfetch.patch"
+	patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/pytuna-fastfetch.patch"
 }
 
 build() {
-	cmake -B build -S "${_pkgname}-${pkgver}" \
+	cmake -B build -S "${pkgname}-${pkgver}" \
 		-DCMAKE_BUILD_TYPE='RelWithDebInfo' \
 		-DCMAKE_INSTALL_PREFIX='/usr' \
 		-DBUILD_FLASHFETCH='OFF' \
