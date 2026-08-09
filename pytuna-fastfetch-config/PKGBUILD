@@ -11,5 +11,5 @@ depends=('fastfetch')
 
 package() {
   install -d "${pkgdir}/etc/skel"
-  cp -rv "${srcdir}/${pkgname}/etc/skel/.config" "${pkgdir}/etc/skel"
+  cp -rv "${startdir}/etc/skel/.config" "${pkgdir}/etc/skel"
 }
