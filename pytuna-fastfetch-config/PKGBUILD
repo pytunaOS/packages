@@ -1,0 +1,14 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-fastfetch-config
+pkgdesc='pytunaOS logo ascii + config for fastfetch'
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/pytunaOS"
+license=(GPL-3.0-only)
+
+package() {
+  install -d "${pkgdir}/etc/skel"
+  cp -rv "${srcdir}/${pkgname}/etc/skel/.config" "${pkgdir}/etc/skel"
+}
