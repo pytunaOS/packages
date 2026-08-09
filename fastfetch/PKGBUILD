@@ -37,7 +37,7 @@ replaces=('fastfetch')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
         'pytuna-fastfetch.patch')
 sha256sums=('547883c2f0dbc85a4545d4533f5b812fbc4c8ffe1271056de18b51994acbf474'
-            'a9da513e625951833f6dad3de21fd3e7a760b4c85a2f0fc2374ba09eb4b22373')
+            '8327972c5b709b707cf876a1f937eef98730c24e688a80684d09f28cec59a1b7')
 
 prepare() {
 	patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/pytuna-fastfetch.patch"
