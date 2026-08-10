@@ -7,7 +7,7 @@ pkgrel=1
 arch=('any')
 url="https://github.com/pytunaOS"
 license=(GPL-3.0-only)
-depends=('alacritty')
+depends=('alacritty' 'ttf-jetbrains-mono-nerd')
 
 package() {
   install -d "${pkgdir}/etc/skel"
