@@ -12,8 +12,6 @@ source=(git+$url)
 sha512sums=('SKIP')
 depends=(
   adw-gtk-theme
-  capitaine-cursors
-  gnome-keyring
   niri
   noctalia
   noto-fonts
