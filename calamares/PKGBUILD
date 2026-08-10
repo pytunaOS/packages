@@ -1,14 +1,15 @@
-# Maintainer:
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
 # Contributor: Rustmilian Rustmilian@proton.me
 
 _pkgname="calamares"
 pkgname="$_pkgname"
 pkgver=3.4.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Distribution-independent installer framework"
 url="https://codeberg.org/Calamares/calamares"
 license=("GPL-3.0-or-later")
 arch=('i686' 'x86_64')
+options=('!debug')
 
 depends=(
   'kcoreaddons'
