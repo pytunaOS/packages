@@ -3,7 +3,7 @@
 pkgname=pytuna-alacritty-config
 pkgdesc='pytunaOS config for alacritty'
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://github.com/pytunaOS"
 license=(GPL-3.0-only)
