@@ -35,6 +35,7 @@ conflicts=('pytuna-desktop-settings')
 
 package() {
   install -d "${pkgdir}/etc/skel"
+  install -d "${pkgdir}/usr/share/wallpapers/pytuna"
   cp -rv "${srcdir}/${pkgname}/etc/skel/.config" "${pkgdir}/etc/skel"
-  cp -rv "${srcdir}/${pkgname}/etc/skel/Imagens" "${pkgdir}/etc/skel"
+  cp -rv "${srcdir}/${pkgname}/Wallpapers/"* "${pkgdir}/usr/share/wallpapers/pytuna"
 }
