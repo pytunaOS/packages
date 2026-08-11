@@ -58,7 +58,7 @@
         },
         {
             "type": "gpu",
-            "format": "{1} {2} {12} Ghz",
+            "format": "{1} {2} {12}",
             "key": "  󰋵",
             "keyColor": "blue"
         },
