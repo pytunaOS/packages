@@ -2,7 +2,7 @@
 
 pkgname=pytuna-calamares-config
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Calamares configuration for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS/pytuna-calamares-config"
