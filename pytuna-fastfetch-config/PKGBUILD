@@ -3,11 +3,11 @@
 pkgname=pytuna-fastfetch-config
 pkgdesc='pytunaOS logo ascii + config for fastfetch'
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://github.com/pytunaOS"
 license=(GPL-3.0-only)
-depends=('fastfetch')
+depends=('fastfetch' 'ttf-jetbrains-mono-nerd')
 
 package() {
   install -d "${pkgdir}/etc/skel"
