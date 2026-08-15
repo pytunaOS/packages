@@ -5,26 +5,30 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="Calamares configuration for pytunaOS"
 arch=('any')
-url="https://github.com/pytunaOS/$pkgname"
+url="https://github.com/pytunaOS/pytuna-calamares-config"
 license=('GPL-3.0-or-later')
+
 depends=('calamares')
+makedepends=('git')
+
+source=("${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git#tag=v${pkgver}")
+sha256sums=('SKIP')
 
 package() {
-  cd "${srcdir}/pytuna-calamares-config-${pkgver}"
+    cd "${srcdir}/${pkgname}"
 
-  install -d "${pkgdir}/etc/calamares"
-  install -d "${pkgdir}/usr/share/calamares/branding"
-  install -d "${pkgdir}/usr/share/calamares/qml/calamares"
+    install -Dm644 usr/share/calamares/settings.conf \
+        "${pkgdir}/etc/calamares/settings.conf"
 
-  install -Dm644 usr/share/calamares/settings.conf \
-      "${pkgdir}/etc/calamares/settings.conf"
+    install -d "${pkgdir}/etc/calamares"
+    cp -a etc/calamares/modules \
+        "${pkgdir}/etc/calamares/"
 
-  cp -a etc/calamares/modules \
-      "${pkgdir}/etc/calamares/"
+    install -d "${pkgdir}/usr/share/calamares/branding"
+    cp -a usr/share/calamares/branding/pytuna \
+        "${pkgdir}/usr/share/calamares/branding/"
 
-  cp -a usr/share/calamares/branding/pytuna \
-      "${pkgdir}/usr/share/calamares/branding/"
-
-  cp -a usr/share/calamares/qml/calamares/slideshow \
-      "${pkgdir}/usr/share/calamares/qml/calamares/"
+    install -d "${pkgdir}/usr/share/calamares/qml/calamares"
+    cp -a usr/share/calamares/qml/calamares/slideshow \
+        "${pkgdir}/usr/share/calamares/qml/calamares/"
 }
