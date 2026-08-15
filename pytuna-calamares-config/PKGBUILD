@@ -11,7 +11,7 @@ license=('GPL-3.0-or-later')
 depends=('calamares')
 makedepends=('git')
 
-source=("${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git#tag=v${pkgver}")
+source=("${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git")
 sha256sums=('SKIP')
 
 package() {
