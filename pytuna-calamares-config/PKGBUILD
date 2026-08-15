@@ -8,8 +8,6 @@ arch=('any')
 url="https://github.com/pytunaOS/$pkgname"
 license=('GPL-3.0-or-later')
 depends=('calamares')
-source=("pytuna-calamares-config-${pkgver}.tar.gz")
-sha256sums=('SKIP')
 
 package() {
   cd "${srcdir}/pytuna-calamares-config-${pkgver}"
