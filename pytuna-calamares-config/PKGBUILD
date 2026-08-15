@@ -27,8 +27,4 @@ package() {
     install -d "${pkgdir}/usr/share/calamares/branding"
     cp -a usr/share/calamares/branding/pytuna \
         "${pkgdir}/usr/share/calamares/branding/"
-
-    install -d "${pkgdir}/usr/share/calamares/qml/calamares"
-    cp -a usr/share/calamares/qml/calamares/slideshow \
-        "${pkgdir}/usr/share/calamares/qml/calamares/"
 }
