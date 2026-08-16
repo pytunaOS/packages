@@ -1,0 +1,14 @@
+_services=(
+    NetworkManager.service
+    systemd-resolved.service
+    systemd-timesyncd.service
+    fstrim.timer
+)
+
+post_install() {
+    systemctl preset "${_services[@]}"
+
+    ln -sfn ../run/systemd/resolve/stub-resolv.conf \
+        /etc/resolv.conf
+}
+

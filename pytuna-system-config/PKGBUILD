@@ -1,0 +1,33 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-system-config
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Permanent system configuration for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+groups=('pytuna')
+
+depends=(
+    'filesystem'
+    'networkmanager'
+    'systemd'
+)
+
+install="${pkgname}.install"
+
+source=(
+    "${install}"
+    '50-pytuna.preset'
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+)
+
+package() {
+    install -Dm644 "${srcdir}/50-pytuna.preset" \
+        "${pkgdir}/usr/lib/systemd/system-preset/50-pytuna.preset"
+}

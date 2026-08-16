@@ -1,0 +1,4 @@
+enable NetworkManager.service
+enable systemd-resolved.service
+enable systemd-timesyncd.service
+enable fstrim.timer

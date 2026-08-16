@@ -35,6 +35,10 @@ depends=(
     'systemd'
 )
 
+makedepends=(
+    'git'
+)
+
 package() {
     cd "${srcdir}/${pkgname}"
 

@@ -1,0 +1,28 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-base-rescue
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Base system metapackage for pytunaOS rescue image"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+groups=('pytuna')
+
+depends=(
+    'pytuna-base'
+
+    # Disk management, recovery and diagnostics
+    'clonezilla'
+    'gpart'
+    'testdisk'
+    'partclone'
+    'partimage'
+    'ddrescue'
+    'fsarchiver'
+    'smartmontools'
+)
+
+package() {
+    :
+}

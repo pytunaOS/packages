@@ -1,0 +1,57 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-base
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Base system metapackage for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+groups=('pytuna')
+
+depends=(
+    # Base system
+    'base'
+    'linux'
+    'linux-firmware'
+    'mkinitcpio'
+    'sudo'
+
+    # Distribution identity, trust and configuration
+    'archlinux-keyring'
+    'chaotic-keyring'
+    'chaotic-mirrorlist'
+    'pytuna-keyring'
+    'pytuna-mirrorlist'
+    'pytuna-release'
+    'pytuna-system-config'
+
+    # Networking
+    'networkmanager'
+    'iwd'
+    'systemd-resolvconf'
+
+    # Bootloader and memory testing
+    'grub'
+    'efibootmgr'
+    'memtest86+'
+    'memtest86+-efi'
+
+    # Filesystems supported by the installer
+    'btrfs-progs'
+    'dosfstools'
+    'e2fsprogs'
+    'exfatprogs'
+    'f2fs-tools'
+    'xfsprogs'
+
+    # Essential utilities
+    'bash-completion'
+    'man-db'
+    'man-pages'
+    'nano'
+)
+
+package() {
+    :
+}
