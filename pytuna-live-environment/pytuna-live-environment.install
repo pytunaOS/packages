@@ -1,0 +1,56 @@
+_create_live_user() {
+    if ! getent group liveuser >/dev/null; then
+        groupadd --gid 1000 liveuser
+    fi
+
+    if ! id liveuser >/dev/null 2>&1; then
+        useradd \
+            --uid 1000 \
+            --gid liveuser \
+            --create-home \
+            --shell /usr/bin/bash \
+            --comment "pytunaOS Live User" \
+            liveuser
+    fi
+
+    local group
+
+    for group in \
+        adm \
+        audio \
+        network \
+        optical \
+        power \
+        rfkill \
+        storage \
+        users \
+        uucp \
+        video \
+        wheel
+    do
+        if getent group "${group}" >/dev/null; then
+            usermod --append --groups "${group}" liveuser
+        fi
+    done
+
+    passwd --delete liveuser
+}
+
+post_install() {
+    _create_live_user
+}
+
+post_upgrade() {
+    _create_live_user
+}
+
+pre_remove() {
+    systemctl disable pacman-init.service 2>/dev/null || true
+    systemctl disable choose-mirror.service 2>/dev/null || true
+}
+
+post_remove() {
+    if id liveuser >/dev/null 2>&1; then
+        userdel --remove liveuser 2>/dev/null || true
+    fi
+}

@@ -1,0 +1,29 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-release
+pkgver=2026.08-beta
+pkgrel=1
+pkgdesc="Release information for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+
+makedepends=('git')
+
+source=(
+    "${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git"
+)
+
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    install -Dm644 usr/lib/os-release \
+        "${pkgdir}/usr/lib/os-release"
+
+    install -d "${pkgdir}/etc"
+
+    ln -s ../usr/lib/os-release \
+        "${pkgdir}/etc/os-release"
+}

@@ -1,0 +1,93 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-live-environment
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Common live ISO environment for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+groups=('pytuna-live')
+install=pytuna-live-environment.install
+
+source=(
+    "${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git"
+    "${install}"
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+)
+
+depends=(
+    'bash'
+    'chwd'
+    'dbus-x11'
+    'gawk'
+    'shadow'
+    'kmod'
+    'gnupg'
+    'openssh'
+    'pacman'
+    'polkit'
+    'sudo'
+    'systemd'
+)
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    install -Dm644 etc/motd \
+        "${pkgdir}/etc/motd"
+
+    install -Dm440 etc/sudoers.d/g_wheel \
+        "${pkgdir}/etc/sudoers.d/g_wheel"
+
+    install -Dm644 etc/polkit-1/rules.d/49-nopasswd_global.rules \
+        "${pkgdir}/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+
+    install -Dm644 etc/ssh/sshd_config.d/10-archiso.conf \
+        "${pkgdir}/etc/ssh/sshd_config.d/10-archiso.conf"
+
+    install -Dm644 etc/systemd/journald.conf.d/volatile-storage.conf \
+        "${pkgdir}/etc/systemd/journald.conf.d/volatile-storage.conf"
+
+    install -Dm644 etc/systemd/logind.conf.d/do-not-suspend.conf \
+        "${pkgdir}/etc/systemd/logind.conf.d/do-not-suspend.conf"
+
+    install -Dm644 etc/systemd/resolved.conf.d/archiso.conf \
+        "${pkgdir}/etc/systemd/resolved.conf.d/archiso.conf"
+
+    install -Dm644 etc/modprobe.d/nvidia-loader.conf \
+        "${pkgdir}/etc/modprobe.d/nvidia-loader.conf"
+
+    install -Dm644 usr/lib/systemd/system/choose-mirror.service \
+        "${pkgdir}/usr/lib/systemd/system/choose-mirror.service"
+
+    install -Dm644 usr/lib/systemd/system/etc-pacman.d-gnupg.mount \
+        "${pkgdir}/usr/lib/systemd/system/etc-pacman.d-gnupg.mount"
+
+    install -Dm644 usr/lib/systemd/system/pacman-init.service \
+        "${pkgdir}/usr/lib/systemd/system/pacman-init.service"
+
+    install -Dm755 usr/local/bin/choose-mirror \
+        "${pkgdir}/usr/local/bin/choose-mirror"
+
+    install -Dm755 usr/local/bin/nvidia-module-loader \
+        "${pkgdir}/usr/local/bin/nvidia-module-loader"
+
+    install -Dm755 usr/local/bin/pkexec-wrapper \
+        "${pkgdir}/usr/local/bin/pkexec-wrapper"
+
+    install -Dm755 usr/local/bin/remove-nvidia \
+        "${pkgdir}/usr/local/bin/remove-nvidia"
+
+    install -d "${pkgdir}/etc/systemd/system/multi-user.target.wants"
+
+    ln -s /usr/lib/systemd/system/choose-mirror.service \
+        "${pkgdir}/etc/systemd/system/multi-user.target.wants/choose-mirror.service"
+
+    ln -s /usr/lib/systemd/system/pacman-init.service \
+        "${pkgdir}/etc/systemd/system/multi-user.target.wants/pacman-init.service"
+}
