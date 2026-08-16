@@ -22,8 +22,8 @@ sha256sums=(
 
 depends=(
     'bash'
-    'chwd'
-    'dbus-x11'
+#    'chwd'
+    'dbus'
     'gawk'
     'shadow'
     'kmod'
