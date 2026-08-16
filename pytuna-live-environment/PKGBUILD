@@ -2,7 +2,7 @@
 
 pkgname=pytuna-live-environment
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Common live ISO environment for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS"
@@ -41,6 +41,10 @@ makedepends=(
 
 package() {
     cd "${srcdir}/${pkgname}"
+
+    install -dm750 \
+       "${pkgdir}/etc/polkit-1/rules.d" \
+       "${pkgdir}/etc/sudoers.d"
 
     install -Dm644 etc/motd \
         "${pkgdir}/etc/motd"
