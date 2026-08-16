@@ -2,7 +2,7 @@
 
 pkgname=pytuna-live-environment
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Common live ISO environment for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS"

@@ -44,3 +44,22 @@ _create_live_user() {
 
     passwd --delete liveuser
 }
+
+post_install() {
+    _create_live_user
+}
+
+post_upgrade() {
+    _create_live_user
+}
+
+pre_remove() {
+    systemctl disable pacman-init.service 2>/dev/null || true
+    systemctl disable choose-mirror.service 2>/dev/null || true
+}
+
+post_remove() {
+    if id liveuser >/dev/null 2>&1; then
+        userdel --remove liveuser 2>/dev/null || true
+    fi
+}
