@@ -1,0 +1,31 @@
+_apply_live_config() {
+    if ! id liveuser >/dev/null 2>&1; then
+        echo "pytuna-live-kde: liveuser does not exist" >&2
+        return 1
+    fi
+
+    install -dm700 \
+        -o liveuser \
+        -g liveuser \
+        /home/liveuser/.config
+
+    local config
+
+    for config in /usr/share/pytuna-live-kde/config/*; do
+        [[ -f "${config}" ]] || continue
+
+        install -m644 \
+            -o liveuser \
+            -g liveuser \
+            "${config}" \
+            "/home/liveuser/.config/${config##*/}"
+    done
+}
+
+post_install() {
+    _apply_live_config
+}
+
+post_upgrade() {
+    _apply_live_config
+}

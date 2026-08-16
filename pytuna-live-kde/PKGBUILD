@@ -1,0 +1,44 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-live-kde
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="KDE Plasma live environment configuration for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS/pytuna-live-kde"
+license=('GPL-3.0-or-later')
+groups=('pytuna-live')
+
+depends=(
+    'pytuna-edition-kde'
+    'pytuna-live-environment'
+)
+
+makedepends=(
+    'git'
+)
+
+install="${pkgname}.install"
+
+source=(
+    "${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git"
+    "${install}"
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+)
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    install -Dm644 etc/plasmalogin.conf.d/10-pytuna-live.conf \
+        "${pkgdir}/etc/plasmalogin.conf.d/10-pytuna-live.conf"
+
+    install -dm755 \
+        "${pkgdir}/usr/share/pytuna-live-kde/config"
+
+    install -m644 usr/share/pytuna-live-kde/config/* \
+        "${pkgdir}/usr/share/pytuna-live-kde/config/"
+}

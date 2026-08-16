@@ -3,7 +3,7 @@
 pkgname=pytuna-system-config
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Permanent system configuration for pytunaOS"
+pkgdesc="System configuration for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS"
 license=('GPL-3.0-or-later')

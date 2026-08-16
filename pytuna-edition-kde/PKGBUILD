@@ -1,0 +1,57 @@
+# Maintainer: Wendel Peterson <pytunaOS@proton.me>
+
+pkgname=pytuna-edition-kde
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="KDE Plasma edition metapackage for pytunaOS"
+arch=('any')
+url="https://github.com/pytunaOS"
+license=('GPL-3.0-or-later')
+groups=('pytuna' 'pytuna-edition')
+
+depends=(
+    # pytunaOS base
+    'pytuna-base'
+
+    # KDE Plasma
+    'plasma-meta'
+
+    # Core applications
+    'dolphin'
+    'konsole'
+    'kate'
+    'ark'
+    'gwenview'
+    'okular'
+    'firefox'
+
+    # Audio
+    'pipewire'
+    'pipewire-audio'
+    'pipewire-alsa'
+    'pipewire-pulse'
+    'wireplumber'
+
+    # Desktop integration
+    'xdg-user-dirs'
+    'xdg-utils'
+    'ffmpegthumbs'
+    'kdegraphics-thumbnailers'
+)
+
+install="${pkgname}.install"
+
+source=(
+    "${install}"
+    '50-pytuna-kde.preset'
+)
+
+sha256sums=(
+    'SKIP'
+    'SKIP'
+)
+
+package() {
+    install -Dm644 "${srcdir}/50-pytuna-kde.preset" \
+        "${pkgdir}/usr/lib/systemd/system-preset/50-pytuna-kde.preset"
+}
