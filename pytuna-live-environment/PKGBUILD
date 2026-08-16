@@ -63,8 +63,8 @@ package() {
     install -Dm644 etc/systemd/resolved.conf.d/archiso.conf \
         "${pkgdir}/etc/systemd/resolved.conf.d/archiso.conf"
 
-    install -Dm644 etc/modprobe.d/nvidia-loader.conf \
-        "${pkgdir}/etc/modprobe.d/nvidia-loader.conf"
+#    install -Dm644 etc/modprobe.d/nvidia-loader.conf \
+#        "${pkgdir}/etc/modprobe.d/nvidia-loader.conf"
 
     install -Dm644 usr/lib/systemd/system/choose-mirror.service \
         "${pkgdir}/usr/lib/systemd/system/choose-mirror.service"
@@ -78,8 +78,8 @@ package() {
     install -Dm755 usr/local/bin/choose-mirror \
         "${pkgdir}/usr/local/bin/choose-mirror"
 
-    install -Dm755 usr/local/bin/nvidia-module-loader \
-        "${pkgdir}/usr/local/bin/nvidia-module-loader"
+#    install -Dm755 usr/local/bin/nvidia-module-loader \
+#        "${pkgdir}/usr/local/bin/nvidia-module-loader"
 
     install -Dm755 usr/local/bin/pkexec-wrapper \
         "${pkgdir}/usr/local/bin/pkexec-wrapper"
