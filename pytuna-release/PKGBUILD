@@ -10,8 +10,11 @@ license=('GPL-3.0-or-later')
 
 makedepends=('git')
 
+install="${pkgname}.install"
+
 source=(
     "${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git"
+    "${install}"
 )
 
 sha256sums=('SKIP')
@@ -20,10 +23,6 @@ package() {
     cd "${srcdir}/${pkgname}"
 
     install -Dm644 usr/lib/os-release \
-        "${pkgdir}/usr/lib/os-release"
+       "${pkgdir}/usr/lib/pytuna-release/os-release"
 
-    install -d "${pkgdir}/etc"
-
-    ln -s ../usr/lib/os-release \
-        "${pkgdir}/etc/os-release"
 }
