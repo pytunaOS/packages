@@ -1,7 +1,7 @@
 # Maintainer: Wendel Peterson <pytunaOS@proton.me>
 
 pkgname=pytuna-release
-pkgver=2026.08-beta
+pkgver=2026.08.beta
 pkgrel=1
 pkgdesc="Release information for pytunaOS"
 arch=('any')
