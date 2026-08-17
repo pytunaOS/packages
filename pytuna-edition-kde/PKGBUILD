@@ -2,7 +2,7 @@
 
 pkgname=pytuna-edition-kde
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="KDE Plasma edition metapackage for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS"
@@ -23,7 +23,7 @@ depends=(
     'ark'
     'gwenview'
     'okular'
-    'firefox'
+    'brave-bin'
 
     # Audio
     'pipewire'

@@ -2,7 +2,7 @@
 
 pkgname=pytuna-base
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Base system metapackage for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS"
@@ -38,12 +38,32 @@ depends=(
     'memtest86+-efi'
 
     # Filesystems supported by the installer
+    'squashfs-tools'
+    'bcachefs-tools'
     'btrfs-progs'
     'dosfstools'
     'e2fsprogs'
     'exfatprogs'
+    'ntfsprogs'
     'f2fs-tools'
     'xfsprogs'
+    'jfsutils'
+    'nilfs-utils'
+    'udftools'
+    'rsync'
+    
+    # Storage / RAID / LVM
+    'dmraid'
+    'lvm2'
+    'mdadm'
+    'nbd'
+    
+    # Disk / Partitioning
+    'fatresize'
+    'gpart'
+    'gptfdisk'
+    'mtools'
+    'parted'
 
     # Essential utilities
     'bash-completion'
