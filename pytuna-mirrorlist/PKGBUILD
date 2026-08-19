@@ -10,7 +10,7 @@ license=(GPL-3.0-or-later)
 groups=(pytuna)
 source=("$pkgname")
 backup=("etc/pacman.d/$pkgname")
-sha512sums=('d123bc09bf05f13b36d9f769cfc43041e0a5a00bca1531f736f6279ffd5e2458261d6b5e572a293ce8d6de50c66037a6a0a1f0e3fc9de9dff42f036503b9f14b')
+sha512sums=('40be3186b59b7fbb80e033a2cd41adfb1e535bb28debef94ce2bf223548bf19012e676acf66d41a7d58fae8d433bf3e6be294b73545a0afda4a99539e9eee5b3')
 
 package() {
     install -Dm644 "$srcdir/$pkgname" "$pkgdir/etc/pacman.d/$pkgname"
