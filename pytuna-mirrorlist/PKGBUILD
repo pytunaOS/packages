@@ -1,7 +1,7 @@
 # Maintainer: Wendel Peterson <pytunaOS@proton.me>
 
 pkgname=pytuna-mirrorlist
-pkgver=20260806
+pkgver=20260819
 pkgrel=1
 pkgdesc="pytunaOS repository mirrorlist"
 url='https://github.com/pytunaOS/packages'
