@@ -2,7 +2,7 @@
 
 pkgname=pytuna-mirrorlist
 pkgver=20260819
-pkgrel=1
+pkgrel=2
 pkgdesc="pytunaOS repository mirrorlist"
 url='https://github.com/pytunaOS/packages'
 arch=('any')
