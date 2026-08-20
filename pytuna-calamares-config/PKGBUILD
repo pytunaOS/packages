@@ -2,13 +2,13 @@
 
 pkgname=pytuna-calamares-config
 pkgver=1.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Calamares configuration for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS/pytuna-calamares-config"
 license=('GPL-3.0-or-later')
 
-depends=('calamares')
+depends=('calamares' 'arch-install-scripts' 'curl')
 makedepends=('git')
 
 source=("${pkgname}::git+https://github.com/pytunaOS/${pkgname}.git")
@@ -17,7 +17,13 @@ sha256sums=('SKIP')
 package() {
     cd "${srcdir}/${pkgname}"
 
-    install -Dm644 usr/share/calamares/settings.conf "${pkgdir}/etc/calamares/settings.conf"
+    install -Dm644 usr/share/calamares/settings-offline.conf "${pkgdir}/etc/calamares/settings-offline.conf"
+    
+    install -Dm644 usr/share/calamares/settings-online.conf "${pkgdir}/etc/calamares/settings-online.conf"
+    
+    install -Dm644 usr/share/calamares/settings-offline.conf "${pkgdir}/etc/calamares/settings.conf"
+    
+    install -Dm755 usr/local/bin/pytuna-installer "${pkgdir}/usr/local/bin/pytuna-installer"
 
     install -d "${pkgdir}/etc/calamares"
     cp -a etc/calamares/modules "${pkgdir}/etc/calamares/"
