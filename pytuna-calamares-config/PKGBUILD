@@ -1,8 +1,8 @@
 # Maintainer: Wendel Peterson <pytunaOS@proton.me>
 
 pkgname=pytuna-calamares-config
-pkgver=1.0.1
-pkgrel=9
+pkgver=1.0.2
+pkgrel=1
 pkgdesc="Calamares configuration for pytunaOS"
 arch=('any')
 url="https://github.com/pytunaOS/pytuna-calamares-config"
